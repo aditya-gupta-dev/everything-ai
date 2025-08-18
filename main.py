@@ -1,6 +1,11 @@
-def main():
-    print("Hello from everything-ai!")
+import pandas as pd 
+import numpy as np
+import matplotlib.pyplot as plt 
 
+db = pd.read_csv('datasets/PLTR_dataset.csv')
 
-if __name__ == "__main__":
-    main()
+date = np.array(db['Date'])
+price = np.array(db['Price'])
+
+plt.plot(date, price)
+plt.savefig('img.png')
